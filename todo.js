@@ -23,7 +23,7 @@ const ask = function (input = "") {
       }
       ask();
     } else if (deleteTask) {
-      const taskNumber = parseInt(deleteTask[1]) - 1; // extacting the todo list item taskNumber
+      const taskNumber = parseInt(deleteTask[1]) - 1; // getting the todo list item taskNumber
       if (todoList[taskNumber]) {
         const deletedItems = todoList.splice(taskNumber, 1); // Delete a todo item
         console.log(`\n${deletedItems[0].title} has been deleted\n`);
@@ -51,7 +51,7 @@ const ask = function (input = "") {
         );
     } else {
       if (command.toLowerCase() === "n") {
-        //this creates a new task as an object with 2 properties: boolean complete and string title
+        //this creates a new task as an object with 2 properties: boolean 'complete' and string 'title'
         rl.question(
           `Please enter a new task
 >`,
