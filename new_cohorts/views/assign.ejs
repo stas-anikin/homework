@@ -24,7 +24,7 @@
     <a class='btn btn-outline-success btn-lg ' href='/edit/<%=cohort.id%>'>Edit</a>
     
 </div>           
-<form action='' method='GET'>
+<form action='/assign' method='POST'>
 
   <input class='hidden' type='text' class='form-control' name='members'
   value='<%= cohort.members%>'>
@@ -33,10 +33,10 @@
   <div class="form-group">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
  <label class="btn active">
-            <input type="radio" name="method" id="team_count" value='team_count'  autocomplete="off" <% if (!method||method==='team_count'){%>checked<%}%>> Team count
+            <input type="radio" name="method" id="team_count" value='team_count' autocomplete="off" checked> Team count
           </label>
           <label class="btn">
-            <input type="radio" name="method" id="per_team" value='per_team' <% if (!method||method==='per_team'){%>checked<%}%>autocomplete="off"> Number per team
+            <input type="radio" name="method" id="per_team" value='per_team' autocomplete="off"> Number per team
           </label>
         </div>
   
@@ -45,8 +45,8 @@
 <div class='card mb-4' style="width: 55rem;">
   <div class='card-body'>
      <div class="form-group">
-          <label for='quantity'>Quantity</label>
-          <input type="text" name="quantity" id='quantity' <% if (quantity){%>value='<%=locals.quantity%>'<%}%>class="form-control">
+          <label>Quantity</label>
+          <input type="text" name="number" class="form-control" value="">
         </div>
       <input
     type='submit'
@@ -55,33 +55,6 @@
   >        
 
   </form>
-  <div>
-    <% if (quantity) { %>
-        <h3 class="ml-3 mr-3 font-weight-bold title">Teams</h3>
-        <hr>
-        <% for (let i = 0; i <  new_team.length; i++) {%>
-            <p><span class="number ml-3 mr-3 font-weight-bold">Team <%= i+1 %>: </span><%= new_team[i].join(', ') %></p>
-        <hr>
-        <% } %>
-    <% } %>
-</div>
-
-
-
-<div class="resultpage"><br>
-  <div class="groups">
-    <% if (quantity){%><%for(let i = 0; i < members.length; i++ ) { %>
-      <% let name1 = members[i] %>
-      <div class="col-md-2">
-        <h2><%= i + 1 %></h2>
-        <% for(let name of name1) {%>
-          <p><%= `${name}` %></p>
-        <% } %>
-      </div>
-    <% } %><%}%>
-  </div>
-</div>
-
 
 
 </main>
