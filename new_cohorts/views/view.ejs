@@ -46,7 +46,7 @@
   <div class='card-body'>
      <div class="form-group">
           <label for='quantity'>Quantity</label>
-          <input type="text" name="quantity" id='quantity' <% if (quantity){%>value='<%=locals.quantity%>'<%}%>class="form-control">
+          <input type="text" name="quantity" id='quantity' <% if (number){%>value='<%=locals.number%>'<%}%>class="form-control">
         </div>
       <input
     type='submit'
@@ -55,30 +55,15 @@
   >        
 
   </form>
-  <div>
-    <% if (quantity) { %>
-        <h3 class="ml-3 mr-3 font-weight-bold title">Teams</h3>
-        <hr>
-        <% for (let i = 0; i <  new_team.length; i++) {%>
-            <p><span class="number ml-3 mr-3 font-weight-bold">Team <%= i+1 %>: </span><%= new_team[i].join(', ') %></p>
-        <hr>
-        <% } %>
-    <% } %>
-</div>
 
 
 
 <div class="resultpage"><br>
   <div class="groups">
-    <% if (quantity){%><%for(let i = 0; i < members.length; i++ ) { %>
-      <% let name1 = members[i] %>
-      <div class="col-md-2">
-        <h2><%= i + 1 %></h2>
-        <% for(let name of name1) {%>
-          <p><%= `${name}` %></p>
-        <% } %>
-      </div>
-    <% } %><%}%>
+    <% if (number){%><%for(let i = 0; i < teams.length; i++ ) { %>
+      <% let name1 = teams[i] %>
+      <hr>
+        <span class='number ml-3 mr-3 font-weight-bold'>Team <%= i + 1 %>:<% for(let name of name1) {%><%= ` ${name}  ` %><% } %></span><% } %><%}%>
   </div>
 </div>
 
