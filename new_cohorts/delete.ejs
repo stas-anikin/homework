@@ -1,0 +1,55 @@
+<%# using tags like will take the contents of whatever is returned inside
+the tags and output as raw text %>
+
+<%- include('partials/header') %>
+<%# ð will get the html from the template in the partials folder named header.ejs
+and replace the line 3 with its contents %>
+
+
+  <div class="container">
+
+    <h1>Team Picker</h1><br>
+    <hr><br>
+
+      <% if(error) { %>
+        <div class="alert alert-danger">
+        <%= error %>
+        </div>
+      <% } %>
+      <form action="/index" method="post" class="form-horizontal">
+          <div class="form-group">
+            <label for="names">Names</label>
+            <textarea name="names" id="names" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="names">Method</label>
+            <input type="radio" name="method" value="team_count"  > Team Count
+            <input type="radio" name="method" value="per_team" > Number Per Team
+          </div>
+          <div class="form-group">
+            <label>Number</label>
+            <input type="text" name="number" class="form-control" value="">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
+      </form>
+
+      <div class="resultpage"><br>
+        <div class="groups">
+          <% for(let i = 0; i < names.length; i++ ) { %>
+            <% let name1 = names[i] %>
+            <div class="col-md-2">
+              <h2><%= i + 1 %></h2>
+              <% for(let name of name1) {%>
+                <p><%= `${name}` %></p>
+              <% } %>
+            </div>
+          <% } %>
+        </div>
+      </div>
+
+<%- include('partials/footer') %>
+
+<%# seperating the top and bottom html that is common to all our pages into
+partials allows to reuse our html code %>

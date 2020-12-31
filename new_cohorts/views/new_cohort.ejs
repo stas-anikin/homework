@@ -1,0 +1,30 @@
+<%- include('./partials/header')%>
+<main class="container">
+  <form action="create" method="POST">
+    <label for="logo_url">Logo URL</label>
+    <div class="form-group">
+      <input type='text' class='form-control' name='logo_url'
+      placeholder='logo_url'value='<%= cohort ? cohort.logo_url : '' %>'>
+    </div>
+    <label for="name">Name</label>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        placeholder="Name of your team"
+      />
+    </div>
+    <label for="members">Members</label>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        name="members"
+        cols="40"
+        rows="5"></textarea>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+  </form>
+
+  <%- include('./partials/footer')%>
+</main>
