@@ -19,11 +19,9 @@ app.use(
 );
 app.use(cookieParser());
 
-
 const knex = require("./db/client");
 
-
-
+// getting our router set up
 const cohortsRouter = require("./routes/cohorts");
 app.use("/", cohortsRouter);
 
