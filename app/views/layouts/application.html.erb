@@ -6,11 +6,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_pack_tag "application" %>
   </head>
 
   <body>
+    <div class='d-flex flex-column'>
+            <%= render "layouts/messages" %>
     <%= yield %>
+    </div>
   </body>
 </html>

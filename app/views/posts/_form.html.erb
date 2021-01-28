@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+              <%= render "shared/errors", obj: @post %>
+            <%= form_with(model: @post, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |form| %>
+            <div class="form-group row">
+                    <%= form.label :title, class: "col-2 col-form-label text-light" %>
+                        <div class="col-10">
+                            <%= form.text_field :title, class: "form-control shadow rounded", placeholder: "post title" %>
+                        </div>
+                    </div>
+                        <div class="form-group row">
+                        <%= form.label :body, class: "col-2 col-form-label text-light" %>
+                            <div class="col-10">
+                                <%= form.text_area :body, rows: 10, class: "form-control shadow rounded", placeholder: "what would you like to write about?" %>
+                            </div>
+                        </div>
+                    <div> 
+                </div> 
+                <div class="form-group row justify-content-center">
+                <%= form.submit class: "btn btn-outline-light btn-lg" %>
+                </div>
+                <% end %>
+            </div>
+                <div class="mb-3">
+                    <%= link_to "[ Cancel and return to posts listing ]", posts_path, class: "text-info" %>
+                 </div>
+        </div>
+    </div>
+</div>
+
