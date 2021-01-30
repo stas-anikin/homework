@@ -13,6 +13,13 @@ test_user = User.create(
   name: "Stas",
   email: "stas@stas.com",
   password: PASSWORD,
+  is_admin: false,
+)
+admin = User.create(
+  name: "admin",
+  email: "admin@admin.com",
+  password: PASSWORD,
+  is_admin: true,
 )
 10.times do
   name = Faker::Name.first_name
@@ -21,6 +28,7 @@ test_user = User.create(
     name: name,
     email: "#{name}@gmail.com",
     password: PASSWORD,
+    is_admin: false,
   )
 end
 users = User.all
