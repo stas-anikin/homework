@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :authenticated_user!
-  # before_action :authorize_user!, only: [:create, :destroy]
 
   def new
     @comment = Comment.new

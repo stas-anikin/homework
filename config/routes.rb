@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get("/", { to: "posts#index", as: :root })
   get("/users/:id/password/edit", { to: "users#edit_password", as: "edit_password" })
   patch("/users/:id/password/edit", { to: "users#update_password", as: "update_password" })
+  get("/admin/panel", to: "users#admin_panel")
 
   resources :posts do
     resources :comments, shallow: true, only: [:create, :destroy]

@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def admin_panel
+    @users = User.all.order(created_at: :desc)
+  end
+
   def create
     @user = User.new user_params
     if @user.save
