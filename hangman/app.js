@@ -116,8 +116,6 @@ window.addEventListener("keydown", (e) => {
 allLeters.forEach((element) => {
   element.addEventListener("click", (event) => {
     const letter = element.id;
-    console.log(letter);
-
     if (team.includes(letter)) {
       if (!correctLetters.includes(letter)) {
         correctLetters.push(letter);
