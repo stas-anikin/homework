@@ -1,0 +1,41 @@
+
+nav{
+  opacity: 0.8;
+}
+
+body {
+  background:
+    url("/images/background.jpeg");
+  background-size: cover;  
+}
+
+textarea {
+  resize: none;
+}
+
+.title {
+  font-size: 2rem;
+}
+ 
+.hidden{
+  display:none;
+}
+
+
+
+.btn {
+  padding: .9rem 1.5rem;
+  margin: .3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+label{
+  background-color: white;
+  opacity: 0.8
+}
+.error{
+  background-color: white;
+  opacity: 0.8;
+text-decoration: underline;
+}
