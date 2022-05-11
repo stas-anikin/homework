@@ -24,7 +24,7 @@ start the server
   Soft deletion could have been implemented with an additional gem such as paper_trail or act-as-paranoid or via <strong>ActiveSupport::Concern</strong>, but I simply added a boolean <strong>“deleted”</strong> column to the items table and customized the update method to allow for soft deletion, undeletion and addition of deletion comments. </p>
 <p>
   I also took the note of CSS/Design/Authentication/Custom UI/Frameworks very literally and created a very minimalist and ascetic views. Normally, I would have used <strong>React</strong> with a <strong>Semantic UI</strong> for front end and either <strong>cancancan</strong> or <strong>devise</strong> for authorization purposes depending on the project requirements.</p>
-Here is the [**Repl**](https://replit.com/@StanislavAnikin/HoneydewGenerousRom) and here is the [**App**]( https://replit.com/@StanislavAnikin/HoneydewGenerousRom)
+Here is the [**Repl**](google.com)(https://replit.com/@StanislavAnikin/HoneydewGenerousRom) and here is the [**App**]( https://replit.com/@StanislavAnikin/HoneydewGenerousRom)
   <p>Thank you for your time and consideration!</p>
   
   <h2>A submission by Stas Anikin</h2>
