@@ -8,7 +8,9 @@
 install dependencies
 ``bundle install`
 `create database
-```rails db:create```
+```
+rails db:create
+```
 run migrations
 `rails db:migrate`
 seed fake data (optional)
